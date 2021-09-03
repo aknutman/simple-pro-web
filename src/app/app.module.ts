@@ -5,10 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
-// import { MatFormFieldModule } from '@angular/material/form-field';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatProgressBarModule } from '@angular/material/progress-bar';
-// import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
@@ -68,10 +65,7 @@ import { LoginComponent } from './login/login.component';
 
     BrowserAnimationsModule,
 
-    // MatFormFieldModule,
-    // MatIconModule,
-    // MatProgressBarModule,
-    // MatToolbarModule
+    FlexLayoutModule,
 
     A11yModule,
     ClipboardModule,

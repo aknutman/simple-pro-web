@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { environment } from '../../environments/environment';
+import { StrapiLoginService } from '../services/login/strapi-login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +11,11 @@ export class LoginComponent implements OnInit {
   hide = true;
   durationInSeconds = 5;
 
-  constructor() {}
+  constructor(private slogin: StrapiLoginService) {}
 
   ngOnInit() {
-    console.log(environment.graphqlUrl);
+    this.slogin.gLogin('agaleonman', 'alohomora').subscribe(result => {
+      console.log(result);
+    });
   }
 }

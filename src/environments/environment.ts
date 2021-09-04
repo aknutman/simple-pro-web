@@ -1,3 +1,1 @@
-export const environment = {
-  graphqlUrl: 'https://simple-pro-strapi.herokuapp.com/graphql'
-};
+export const graphqlUrl = 'https://simple-pro-strapi.herokuapp.com/graphql';

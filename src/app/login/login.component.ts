@@ -13,9 +13,16 @@ export class LoginComponent implements OnInit {
 
   constructor(private slogin: StrapiLoginService) {}
 
-  ngOnInit() {
-    this.slogin.gLogin('agaleonman', 'alohomora').subscribe(result => {
-      console.log(result);
-    });
+  ngOnInit() {}
+
+  loginAction(username: string, password: string) {
+    this.slogin.gLogin(username, password).subscribe(
+      result => {
+        console.log(result);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }

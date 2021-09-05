@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviourSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class LoadingBarService {

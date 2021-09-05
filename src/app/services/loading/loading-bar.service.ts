@@ -8,4 +8,8 @@ export class LoadingBarService {
 
   private loadingAnimation = new BehaviorSubject(false);
   sharedLoadingAnimation = this.loadingAnimation;
+
+  setLoadingAnimation(isDisplay: boolean) {
+    this.loadingAnimation.next(isDisplay);
+  }
 }

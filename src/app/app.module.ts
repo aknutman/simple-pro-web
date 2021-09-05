@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
@@ -23,6 +23,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { LoginComponent } from './login/login.component';
 
 import { StrapiLoginService } from './services/login/strapi-login.service';
+import { LoadingBarService } from './services/loading/loading-bar.service';
 
 @NgModule({
   imports: [
@@ -37,7 +38,7 @@ import { StrapiLoginService } from './services/login/strapi-login.service';
 
     FlexLayoutModule,
 
-    AppMaterialModule,
+    AppMaterialModule
   ],
   declarations: [AppComponent, TopBarComponent, LoginComponent],
   bootstrap: [AppComponent],
@@ -56,7 +57,8 @@ import { StrapiLoginService } from './services/login/strapi-login.service';
       deps: [HttpLink]
     },
 
-    StrapiLoginService
+    StrapiLoginService,
+    LoadingBarService
   ]
 })
 export class AppModule {}

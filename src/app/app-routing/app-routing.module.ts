@@ -8,7 +8,7 @@ import { RoomMainComponent } from '../sp-room/room-main/room-main.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'main', component: RoomMainComponent }
+  { path: 'u/:username', component: RoomMainComponent }
 ];
 
 @NgModule({

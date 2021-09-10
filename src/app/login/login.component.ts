@@ -5,6 +5,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { StrapiLoginService } from '../services/login/strapi-login.service';
 import { LoadingBarService } from '../services/loading/loading-bar.service';
+import { JwtTokenService } from '../services/login/jwt-token.service';
+
+export interface loginReturnType {
+  data: {
+    login: {
+      jwt: string;
+      user: {
+        id: string;
+        username: string;
+      }
+    }
+  }
+}
 
 @Component({
   selector: 'app-login',
@@ -19,7 +32,8 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private slogin: StrapiLoginService,
     private snackBar: MatSnackBar,
-    private loadingbar: LoadingBarService
+    private loadingbar: LoadingBarService,
+    private jwtToken: JwtTokenService
   ) {}
 
   ngOnInit() {}
@@ -28,9 +42,11 @@ export class LoginComponent implements OnInit {
     this.loadingbar.setLoadingAnimation(true);
 
     this.slogin.gLogin(username, password).subscribe(
-      result => {
+      (result: loginReturnType) => {
         console.log(result);
-        this.router.navigateByUrl('/main');
+
+        this.jwtToken.setJwtToken(result.data.login.jwt);
+        this.router.navigateByUrl('/u/' + result.data.login.user.username);
 
         this.loadingbar.setLoadingAnimation(false);
       },

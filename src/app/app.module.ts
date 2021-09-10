@@ -27,6 +27,7 @@ import {
 import { RoomMainComponent } from './sp-room/room-main/room-main.component';
 
 import { StrapiLoginService } from './services/login/strapi-login.service';
+import { JwtTokenService } from './services/login/jwt-token.service';
 import { LoadingBarService } from './services/loading/loading-bar.service';
 
 @NgModule({
@@ -68,6 +69,7 @@ import { LoadingBarService } from './services/loading/loading-bar.service';
     },
 
     StrapiLoginService,
+    JwtTokenService,
     LoadingBarService
   ],
 

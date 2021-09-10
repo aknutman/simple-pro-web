@@ -20,7 +20,11 @@ import { AppMaterialModule } from './app-material/app-material.module';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { LoginComponent } from './login/login.component';
+import {
+  LoginComponent,
+  WrongCredSnackbarComponent
+} from './login/login.component';
+import { RoomMainComponent } from './sp-room/room-main/room-main.component';
 
 import { StrapiLoginService } from './services/login/strapi-login.service';
 import { LoadingBarService } from './services/loading/loading-bar.service';
@@ -40,7 +44,13 @@ import { LoadingBarService } from './services/loading/loading-bar.service';
 
     AppMaterialModule
   ],
-  declarations: [AppComponent, TopBarComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    TopBarComponent,
+    LoginComponent,
+    WrongCredSnackbarComponent,
+    RoomMainComponent
+  ],
   bootstrap: [AppComponent],
 
   providers: [
@@ -59,6 +69,8 @@ import { LoadingBarService } from './services/loading/loading-bar.service';
 
     StrapiLoginService,
     LoadingBarService
-  ]
+  ],
+
+  entryComponents: [WrongCredSnackbarComponent]
 })
 export class AppModule {}

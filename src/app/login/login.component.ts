@@ -43,8 +43,7 @@ export class LoginComponent implements OnInit {
 
     this.slogin.gLogin(username, password).subscribe(
       (result: loginReturnType) => {
-        console.log(result);
-
+        
         this.jwtToken.setJwtToken(result.data.login.jwt);
         this.router.navigateByUrl('/u/' + result.data.login.user.username);
 

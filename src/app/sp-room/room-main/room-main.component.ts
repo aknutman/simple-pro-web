@@ -18,8 +18,6 @@ export class RoomMainComponent implements OnInit {
   ngOnInit() {
     this.subs = this.jwtToken.sharedJwtToken.subscribe((result: string) => {
       if (result == '') {
-        console.log('session is invalid, redirecting to login page');
-
         this.router.navigateByUrl('/');
       }
     });

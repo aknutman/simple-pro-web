@@ -1,5 +1,4 @@
 <div fxLayout="row" fxLayoutAlign="space-between none" style="height: 100%;">
-  
   <div fxFlex="20" class="side-nav">
     <mat-selection-list [multiple]="false">
       <div mat-subheader>Dashboard</div>
@@ -41,7 +40,12 @@
         <div mat-line>PP</div>
       </mat-list-option>
     </mat-selection-list>
-
   </div>
-  <div fxFlex>mail</div>
+  <div fxFlex class="main-panel">
+    <mat-toolbar class="main-panel-toolbar">
+      <mat-toolbar-row>
+        <span>SIMPLE-PRO</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
 </div>

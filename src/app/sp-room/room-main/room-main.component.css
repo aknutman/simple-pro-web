@@ -1,6 +1,18 @@
 .side-nav {
+  background-color: rgba(211, 211, 211, 0.2);
+  margin-top: -4px;
+}
+
+.main-panel {
   background-color: rgba(211, 211, 211, 0.1);
   margin-top: -4px;
+}
+
+.main-panel-toolbar{
+  /* background-color: #6200EA; */
+  background-color: rgba(103, 58, 183, 0.2);
+  /* color: whitesmoke; */
+  font-weight: 500;
 }
 
 button {

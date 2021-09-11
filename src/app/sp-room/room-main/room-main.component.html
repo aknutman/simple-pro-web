@@ -3,7 +3,7 @@
     <mat-selection-list #sidemenu [multiple]="false" (selectionChange)="onSelectionChanges(sidemenu.selectedOptions.selected[0].value)">
       <div mat-subheader>Dashboard</div>
 
-      <mat-list-option value="dashboard">
+      <mat-list-option value="dashboard" routerLink="/u/{{username}}/dashboard">
         <mat-icon mat-list-icon>assessment</mat-icon>
         <div mat-line>Dashboard</div>
       </mat-list-option>
@@ -11,15 +11,15 @@
       <mat-divider></mat-divider>
 
       <div mat-subheader>Paket Pengadaan</div>
-      <mat-list-option value="new-request">
+      <mat-list-option value="new-request" routerLink="/u/{{username}}">
         <mat-icon mat-list-icon>note_add</mat-icon>
         <div mat-line>Permintaan</div>
       </mat-list-option>
-      <mat-list-option value="on-progress">
+      <mat-list-option value="on-progress" routerLink="/u/{{username}}">
         <mat-icon mat-list-icon>assignment</mat-icon>
         <div mat-line>Berlangsung</div>
       </mat-list-option>
-      <mat-list-option value="ratings">
+      <mat-list-option value="ratings" routerLink="/u/{{username}}">
         <mat-icon mat-list-icon>star_rate</mat-icon>
         <div mat-line>Rating</div>
       </mat-list-option>
@@ -27,15 +27,15 @@
       <mat-divider></mat-divider>
 
       <div mat-subheader>Profil</div>
-      <mat-list-option value="profile-one">
+      <mat-list-option value="profile-one" routerLink="/u/{{username}}">
         <mat-icon mat-list-icon>person</mat-icon>
         <div mat-line>UKPBJ</div>
       </mat-list-option>
-      <mat-list-option value="profile-two">
+      <mat-list-option value="profile-two" routerLink="/u/{{username}}">
         <mat-icon mat-list-icon>group</mat-icon>
         <div mat-line>PPK</div>
       </mat-list-option>
-      <mat-list-option value="profile-three">
+      <mat-list-option value="profile-three" routerLink="/u/{{username}}">
         <mat-icon mat-list-icon>groups</mat-icon>
         <div mat-line>PP</div>
       </mat-list-option>

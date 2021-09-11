@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'u/:username', component: RoomMainComponent },
   {
-    path: 'u/:username/p',
+    path: 'u/:username',
     component: RoomMainComponent,
     children: [{ path: 'dashboard', component: RoomDashboardComponent }]
   }

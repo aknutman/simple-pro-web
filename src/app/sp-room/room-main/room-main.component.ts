@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
@@ -17,6 +17,7 @@ export interface menuNameType {
 })
 export class RoomMainComponent implements OnInit {
   subs: Subscription;
+  username: string;
 
   selectedTitle: string = 'SIMPLE-PROS';
 
@@ -30,13 +31,21 @@ export class RoomMainComponent implements OnInit {
     { value: 'profile-three', name: 'PP' }
   ];
 
-  constructor(private router: Router, private jwtToken: JwtTokenService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private jwtToken: JwtTokenService
+  ) {}
 
   ngOnInit() {
     this.subs = this.jwtToken.sharedJwtToken.subscribe((result: string) => {
       if (result == '') {
         // this.router.navigateByUrl('/');
       }
+
+      this.route.paramMap.subscribe(params => {
+        this.username = params.get('username');
+      });
     });
   }
 

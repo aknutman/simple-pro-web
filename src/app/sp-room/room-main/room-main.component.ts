@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
+import { MatListOption } from '@angular/material/list';
 
 import { JwtTokenService } from '../../services/login/jwt-token.service';
 
@@ -27,5 +28,9 @@ export class RoomMainComponent implements OnInit {
     this.jwtToken.setJwtToken('');
 
     this.subs.unsubscribe();
+  }
+
+  onSelectionChanges(options: MatListOption[]) {
+    console.log(options);
   }
 }

@@ -1,9 +1,9 @@
 <div fxLayout="row" fxLayoutAlign="space-between none" style="height: 100%;">
   <div fxFlex="20" class="side-nav">
-    <mat-selection-list [multiple]="false">
+    <mat-selection-list #sidemenu [multiple]="false" (selectionChange)="onSelectionChanges(sidemenu.selectedOptions.selected[0].value)">
       <div mat-subheader>Dashboard</div>
 
-      <mat-list-option>
+      <mat-list-option value="dashboard">
         <mat-icon mat-list-icon>assessment</mat-icon>
         <div mat-line>Dashboard</div>
       </mat-list-option>
@@ -11,15 +11,15 @@
       <mat-divider></mat-divider>
 
       <div mat-subheader>Paket Pengadaan</div>
-      <mat-list-option>
+      <mat-list-option value="new-request">
         <mat-icon mat-list-icon>note_add</mat-icon>
         <div mat-line>Permintaan</div>
       </mat-list-option>
-      <mat-list-option>
+      <mat-list-option value="on-progress">
         <mat-icon mat-list-icon>assignment</mat-icon>
         <div mat-line>Berlangsung</div>
       </mat-list-option>
-      <mat-list-option>
+      <mat-list-option value="ratings">
         <mat-icon mat-list-icon>star_rate</mat-icon>
         <div mat-line>Rating</div>
       </mat-list-option>
@@ -27,15 +27,15 @@
       <mat-divider></mat-divider>
 
       <div mat-subheader>Profil</div>
-      <mat-list-option>
+      <mat-list-option value="profile-one">
         <mat-icon mat-list-icon>person</mat-icon>
         <div mat-line>UKPBJ</div>
       </mat-list-option>
-      <mat-list-option>
+      <mat-list-option value="profile-two">
         <mat-icon mat-list-icon>group</mat-icon>
         <div mat-line>PPK</div>
       </mat-list-option>
-      <mat-list-option>
+      <mat-list-option value="profile-three">
         <mat-icon mat-list-icon>groups</mat-icon>
         <div mat-line>PP</div>
       </mat-list-option>
@@ -47,5 +47,10 @@
         <span>SIMPLE-PRO</span>
       </mat-toolbar-row>
     </mat-toolbar>
+    <div>
+      <p>
+        It's worked!
+      </p>
+    </div>
   </div>
 </div>

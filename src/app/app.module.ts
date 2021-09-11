@@ -25,6 +25,7 @@ import {
   WrongCredSnackbarComponent
 } from './login/login.component';
 import { RoomMainComponent } from './sp-room/room-main/room-main.component';
+import { RoomDashboardComponent } from './sp-room/room-dashboard/room-dashboard.component';
 
 import { StrapiLoginService } from './services/login/strapi-login.service';
 import { JwtTokenService } from './services/login/jwt-token.service';
@@ -50,7 +51,8 @@ import { LoadingBarService } from './services/loading/loading-bar.service';
     TopBarComponent,
     LoginComponent,
     WrongCredSnackbarComponent,
-    RoomMainComponent
+    RoomMainComponent,
+    RoomDashboardComponent
   ],
   bootstrap: [AppComponent],
 

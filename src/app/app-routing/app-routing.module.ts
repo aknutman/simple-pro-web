@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'u/:username', redirectTo: 'u/:username/home', pathMatch: 'full' },
-  { path: 'u/:username', component: RoomMainComponent },
   {
     path: 'u/:username',
     component: RoomMainComponent,

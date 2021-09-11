@@ -19,7 +19,7 @@ export class RoomMainComponent implements OnInit {
   subs: Subscription;
   username: string;
 
-  selectedTitle: string = 'SIMPLE-PROS';
+  selectedTitle: string = 'HOME PAGE';
 
   menuNames: menuNameType[] = [
     { value: 'dashboard', name: 'Dashboard' },

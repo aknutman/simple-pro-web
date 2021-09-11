@@ -7,6 +7,8 @@ import { RoomMainComponent } from '../sp-room/room-main/room-main.component';
 import { RoomDashboardComponent } from '../sp-room/room-dashboard/room-dashboard.component';
 import { RoomMainHomeComponent } from '../sp-room/room-main-home/room-main-home.component';
 
+import { RoomProjectsRequestComponent } from '../sp-room/room-projects-request/room-projects-request.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -17,7 +19,9 @@ const routes: Routes = [
     component: RoomMainComponent,
     children: [
       { path: 'home', component: RoomMainHomeComponent },
-      { path: 'dashboard', component: RoomDashboardComponent }
+      { path: 'dashboard', component: RoomDashboardComponent },
+
+      { path: 'projects/request', component: RoomProjectsRequestComponent }
     ]
   }
 ];

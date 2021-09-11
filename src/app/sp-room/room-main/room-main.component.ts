@@ -2,9 +2,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
-import { MatListOption } from '@angular/material/list';
 
 import { JwtTokenService } from '../../services/login/jwt-token.service';
+
+export interface menuNameType {
+  value: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-room-main',
@@ -13,6 +17,18 @@ import { JwtTokenService } from '../../services/login/jwt-token.service';
 })
 export class RoomMainComponent implements OnInit {
   subs: Subscription;
+
+  selectedTitle: string = 'SIMPLE-PROS';
+
+  menuNames: menuNameType[] = [
+    { value: 'dashboard', name: 'Dashboard' },
+    { value: 'new-request', name: 'Permintaan' },
+    { value: 'on-progress', name: 'Berlangsung' },
+    { value: 'ratings', name: 'Rating' },
+    { value: 'profile-one', name: 'UKPBJ' },
+    { value: 'profile-two', name: 'PPK' },
+    { value: 'profile-three', name: 'PP' }
+  ];
 
   constructor(private router: Router, private jwtToken: JwtTokenService) {}
 
@@ -30,7 +46,9 @@ export class RoomMainComponent implements OnInit {
     this.subs.unsubscribe();
   }
 
-  onSelectionChanges(options: MatListOption[]) {
-    console.log(options);
+  onSelectionChanges(options: string) {
+    this.selectedTitle = this.menuNames.filter(
+      item => item.value == options
+    )[0].name;
   }
 }

@@ -18,7 +18,7 @@ export class RoomMainComponent implements OnInit {
   ngOnInit() {
     this.subs = this.jwtToken.sharedJwtToken.subscribe((result: string) => {
       if (result == '') {
-        this.router.navigateByUrl('/');
+        // this.router.navigateByUrl('/');
       }
     });
   }

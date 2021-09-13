@@ -1,6 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="space-between none" style="height: 100%;">
   <div fxFlex="20" class="side-nav">
-    <mat-selection-list #sidemenu [multiple]="false" (selectionChange)="onSelectionChanges(sidemenu.selectedOptions.selected[0].value)">
+    <mat-selection-list #sidemenu [multiple]="false"
+      (selectionChange)="onSelectionChanges(sidemenu.selectedOptions.selected[0].value)">
       <div mat-subheader>Dashboard</div>
 
       <mat-list-option value="dashboard" routerLink="/u/{{username}}/dashboard">
@@ -48,9 +49,7 @@
       </mat-toolbar-row>
     </mat-toolbar>
     <div>
-      <p>
-        <router-outlet></router-outlet>
-      </p>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

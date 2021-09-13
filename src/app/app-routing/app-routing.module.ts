@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'home', component: RoomMainHomeComponent },
       { path: 'dashboard', component: RoomDashboardComponent },
 
-      { path: 'projects', component: RoomProjectsHomeComponent },
+      { path: 'projects/home', component: RoomProjectsHomeComponent },
       { path: 'projects/:project', component: RoomProjectsListComponent },
     ]
   }

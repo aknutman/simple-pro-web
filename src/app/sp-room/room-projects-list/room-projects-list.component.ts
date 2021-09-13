@@ -19,7 +19,7 @@ export class RoomProjectsListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.urlSubs = this.route.params.subscribe(param => {
-      console.log(param);
+      console.log(param.project);
     });
   }
 

@@ -18,7 +18,6 @@ export interface menuNameType {
 export class RoomMainComponent implements OnInit {
   subs: Subscription;
   username: string;
-  project: string;
 
   selectedTitle: string = 'HOME PAGE';
 
@@ -47,18 +46,7 @@ export class RoomMainComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       this.username = params.get('username');
-
-      console.log(this.username);
     });
-
-    // this.route.children[0].paramMap.subscribe(cParam => {
-    //   this.project = cParam.get('project');
-    //   console.log(this.project);
-    // });
-
-    // this.route.paramMap.subscribe(param => {
-    //   console.log(param);
-    // });
   }
 
   ngOnDestroy() {

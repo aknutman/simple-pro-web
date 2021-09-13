@@ -1,18 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
+
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-room-projects-list',
   templateUrl: './room-projects-list.component.html',
   styleUrls: ['./room-projects-list.component.css']
 })
-export class RoomProjectsListComponent implements OnInit {
+export class RoomProjectsListComponent implements OnInit, OnDestroy {
+  urlSubs: Subscription;
+
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.urlSubs = this.route.params.subscribe(param => {
+      console.log(param);
+    });
+  }
+
+  ngOnDestroy(){
+    this.urlSubs.unsubscribe;
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

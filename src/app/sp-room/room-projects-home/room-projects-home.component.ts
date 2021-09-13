@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./room-projects-home.component.css']
 })
 export class RoomProjectsHomeComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    // Change Secondary Title to Projects Home
   }
-
 }

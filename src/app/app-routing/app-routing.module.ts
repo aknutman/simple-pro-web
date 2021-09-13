@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'u/:username', redirectTo: 'u/:username/home', pathMatch: 'full' },
-  { path: 'u/:username/projects', redirectTo: 'u/:username/projects/home', pathMatch: 'full' },
   {
     path: 'u/:username',
     component: RoomMainComponent,
@@ -23,7 +22,7 @@ const routes: Routes = [
       { path: 'home', component: RoomMainHomeComponent },
       { path: 'dashboard', component: RoomDashboardComponent },
 
-      { path: 'projects/home', component: RoomProjectsHomeComponent },
+      { path: 'projects', component: RoomProjectsHomeComponent },
       { path: 'projects/:project', component: RoomProjectsListComponent },
     ]
   }

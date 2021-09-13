@@ -12,13 +12,14 @@
   margin-top: -4px;
 }
 
-.main-panel-toolbar{
+.main-panel-toolbar {
   /* background-color: #6200EA; */
   background-color: rgba(103, 58, 183, 0.2);
   /* color: whitesmoke; */
   font-weight: 500;
 }
 
-button {
-  width: 100%;
+.back-button {
+  width: 40px;
+  margin-top: -3px;
 }

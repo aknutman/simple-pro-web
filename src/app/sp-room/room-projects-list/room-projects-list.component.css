@@ -3,6 +3,16 @@
   overflow: auto;
 }
 
+.example-search-container {
+  padding: 10px;
+}
+
+/* Structure */
 table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
   width: 100%;
 }

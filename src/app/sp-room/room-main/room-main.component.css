@@ -1,3 +1,7 @@
+.basic-container {
+  padding: 10px;
+}
+
 .side-nav {
   background-color: rgba(211, 211, 211, 0.2);
   margin-top: -4px;

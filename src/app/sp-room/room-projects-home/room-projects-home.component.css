@@ -1,0 +1,18 @@
+.example-card {
+  max-width: 400px;
+  height: 100px;
+}
+
+.example-header-image {
+  /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
+  background-color: #EDE7F6;
+  font-size: xx-large;
+  text-align: center;
+  vertical-align: middle;
+  background-size: cover;
+}
+
+/* .container .cardWrap div {
+  height: 300px;
+  border: 2px solid gray;
+} */

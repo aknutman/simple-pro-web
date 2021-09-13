@@ -8,6 +8,7 @@ import { JwtTokenService } from '../../services/login/jwt-token.service';
 export interface menuNameType {
   value: string;
   name: string;
+  back: boolean;
 }
 
 @Component({
@@ -19,16 +20,19 @@ export class RoomMainComponent implements OnInit {
   subs: Subscription;
   username: string;
 
-  selectedTitle: string = 'HOME PAGE';
+  readonly project_home_string: string = 'Paket Pengadaan';
+
+  selectedTitle: string = this.project_home_string;
+  backButton: boolean = false;
 
   menuNames: menuNameType[] = [
-    { value: 'dashboard', name: 'Dashboard' },
-    { value: 'new-request', name: 'Permintaan' },
-    { value: 'on-progress', name: 'Berlangsung' },
-    { value: 'ratings', name: 'Rating' },
-    { value: 'profile-one', name: 'UKPBJ' },
-    { value: 'profile-two', name: 'PPK' },
-    { value: 'profile-three', name: 'PP' }
+    { value: 'dashboard', name: 'Dashboard', back: false },
+    { value: 'new-request', name: 'Permintaan', back: true },
+    { value: 'on-progress', name: 'Berlangsung', back: true },
+    { value: 'ratings', name: 'Rating', back: true },
+    { value: 'profile-one', name: 'UKPBJ', back: false },
+    { value: 'profile-two', name: 'PPK', back: false },
+    { value: 'profile-three', name: 'PP', back: false }
   ];
 
   constructor(
@@ -59,5 +63,14 @@ export class RoomMainComponent implements OnInit {
     this.selectedTitle = this.menuNames.filter(
       item => item.value == options
     )[0].name;
+
+    this.backButton = this.menuNames.filter(
+      item => item.value == options
+    )[0].back;
+  }
+
+  backAction() {
+    this.selectedTitle = this.project_home_string;
+    this.backButton = false;
   }
 }

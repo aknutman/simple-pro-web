@@ -51,10 +51,14 @@ export class RoomMainComponent implements OnInit {
       console.log(this.username);
     });
 
-    this.route.children[0].paramMap.subscribe(cParam => {
-      this.project = cParam.get('project');
-      console.log(this.project);
-    });
+    // this.route.children[0].paramMap.subscribe(cParam => {
+    //   this.project = cParam.get('project');
+    //   console.log(this.project);
+    // });
+
+    // this.route.paramMap.subscribe(param => {
+    //   console.log(param);
+    // });
   }
 
   ngOnDestroy() {

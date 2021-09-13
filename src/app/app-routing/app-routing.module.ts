@@ -8,6 +8,7 @@ import { RoomDashboardComponent } from '../sp-room/room-dashboard/room-dashboard
 import { RoomMainHomeComponent } from '../sp-room/room-main-home/room-main-home.component';
 
 import { RoomProjectsHomeComponent } from '../sp-room/room-projects-home/room-projects-home.component';
+import { RoomProjectsListComponent } from '../sp-room/room-projects-list/room-projects-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -23,7 +24,7 @@ const routes: Routes = [
       { path: 'dashboard', component: RoomDashboardComponent },
 
       { path: 'projects/home', component: RoomProjectsHomeComponent },
-      { path: 'projects/:project', component: RoomProjectsHomeComponent },
+      { path: 'projects/:project', component: RoomProjectsListComponent },
     ]
   }
 ];

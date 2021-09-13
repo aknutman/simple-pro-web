@@ -29,6 +29,7 @@ import { RoomDashboardComponent } from './sp-room/room-dashboard/room-dashboard.
 import { RoomMainHomeComponent } from './sp-room/room-main-home/room-main-home.component';
 
 import { RoomProjectsHomeComponent } from './sp-room/room-projects-home/room-projects-home.component';
+import { RoomProjectsListComponent } from './sp-room/room-projects-list/room-projects-list.component';
 
 import { StrapiLoginService } from './services/login/strapi-login.service';
 import { JwtTokenService } from './services/login/jwt-token.service';
@@ -59,6 +60,7 @@ import { LoadingBarService } from './services/loading/loading-bar.service';
     RoomMainHomeComponent,
 
     RoomProjectsHomeComponent,
+    RoomProjectsListComponent,
   ],
   bootstrap: [AppComponent],
 

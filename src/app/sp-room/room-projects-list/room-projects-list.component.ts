@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 export class RoomProjectsListComponent implements OnInit, OnDestroy {
   urlSubs: Subscription;
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['RUPCode', 'ProjectName', 'ContractStartDate', 'OrganizationUnit', 'RequestType'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   constructor(private route: ActivatedRoute) {}
@@ -23,7 +23,7 @@ export class RoomProjectsListComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.urlSubs.unsubscribe;
   }
 
@@ -33,22 +33,46 @@ export class RoomProjectsListComponent implements OnInit, OnDestroy {
   }
 }
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+export interface RequestElement {
+  RequestNumber: string;
+  ProjectName: string;
+  RUPCode: string;
+  CeilingValue: number;
+  HPS: number;
+  ContractStartDate: Date;
+  OrganizationUnit: string;
+  RequestType: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' }
+const ELEMENT_DATA: RequestElement[] = [
+  {
+    RequestNumber: 'RN-001',
+    ProjectName: 'Test',
+    RUPCode: 'RUP-001',
+    CeilingValue: 200000000,
+    HPS: 100000000,
+    ContractStartDate: new Date(2021, 9, 14),
+    OrganizationUnit: 'Sekretariat',
+    RequestType: 'Barang'
+  },
+  {
+    RequestNumber: 'RN-002',
+    ProjectName: 'Ahahahaha',
+    RUPCode: 'RUP-002',
+    CeilingValue: 250000000,
+    HPS: 150000000,
+    ContractStartDate: new Date(2021, 8, 1),
+    OrganizationUnit: 'Sekretariat',
+    RequestType: 'Jasa Lainnya'
+  },
+  {
+    RequestNumber: 'RN-003',
+    ProjectName: 'Coba lagi',
+    RUPCode: 'RUP-003',
+    CeilingValue: 300000000,
+    HPS: 200000000,
+    ContractStartDate: new Date(2021, 1, 1),
+    OrganizationUnit: 'Direktorat Perdata',
+    RequestType: 'Pekerjaan Konstruksi'
+  }
 ];

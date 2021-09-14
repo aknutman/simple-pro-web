@@ -10,28 +10,34 @@
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    <!-- RUPCode Column -->
+    <ng-container matColumnDef="RUPCode">
+      <th mat-header-cell *matHeaderCellDef> Kode RUP </th>
+      <td mat-cell *matCellDef="let element"> {{element.RUPCode}} </td>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <!-- ProjectName Column -->
+    <ng-container matColumnDef="ProjectName">
+      <th mat-header-cell *matHeaderCellDef> Paket Pengadaan </th>
+      <td mat-cell *matCellDef="let element"> {{element.ProjectName}} </td>
     </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    <!-- ContractStartDate Column -->
+    <ng-container matColumnDef="ContractStartDate">
+      <th mat-header-cell *matHeaderCellDef> Tanggal Mulai Kontrak </th>
+      <td mat-cell *matCellDef="let element"> {{element.ContractStartDate}} </td>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    <!-- OrganizationUnit Column -->
+    <ng-container matColumnDef="OrganizationUnit">
+      <th mat-header-cell *matHeaderCellDef> Unit Organisasi </th>
+      <td mat-cell *matCellDef="let element"> {{element.OrganizationUnit}} </td>
+    </ng-container>
+
+    <!-- RequestType Column -->
+    <ng-container matColumnDef="RequestType">
+      <th mat-header-cell *matHeaderCellDef> Jenis Pengadaan </th>
+      <td mat-cell *matCellDef="let element"> {{element.RequestType}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

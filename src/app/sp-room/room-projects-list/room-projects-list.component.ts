@@ -10,8 +10,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./room-projects-list.component.css']
 })
 export class RoomProjectsListComponent implements OnInit, OnDestroy {
-  urlSubs: Subscription;
+  parentUrlSub: Subscription;
+  childUrlSub: Subscription;
   username: string;
+  projectName: string;
 
   displayedColumns: string[] = [
     'RUPCode',
@@ -25,17 +27,18 @@ export class RoomProjectsListComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.urlSubs = this.route.params.subscribe(param => {
-      // console.log(param.project);
+    this.childUrlSub = this.route.paramMap.subscribe(param => {
+      this.projectName = param.get('project');
     });
 
-    this.route.parent.paramMap.subscribe(params => {
-      this.username = params.get('username');
+    this.parentUrlSub = this.route.parent.paramMap.subscribe(param => {
+      this.username = param.get('username');
     });
   }
 
   ngOnDestroy() {
-    this.urlSubs.unsubscribe;
+    this.parentUrlSub.unsubscribe;
+    this.childUrlSub.unsubscribe;
   }
 
   applyFilter(event: Event) {

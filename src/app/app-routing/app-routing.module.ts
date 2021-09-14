@@ -9,6 +9,7 @@ import { RoomMainHomeComponent } from '../sp-room/room-main-home/room-main-home.
 
 import { RoomProjectsHomeComponent } from '../sp-room/room-projects-home/room-projects-home.component';
 import { RoomProjectsListComponent } from '../sp-room/room-projects-list/room-projects-list.component';
+import { RoomProjectsDetailComponent } from '../sp-room/room-projects-detail/room-projects-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
 
       { path: 'projects/home', component: RoomProjectsHomeComponent },
       { path: 'projects/:project', component: RoomProjectsListComponent },
+      { path: 'projects/:project/detail/:detail', component: RoomProjectsDetailComponent },
     ]
   }
 ];

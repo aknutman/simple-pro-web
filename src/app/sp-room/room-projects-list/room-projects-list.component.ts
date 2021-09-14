@@ -11,15 +11,26 @@ import { Subscription } from 'rxjs';
 })
 export class RoomProjectsListComponent implements OnInit, OnDestroy {
   urlSubs: Subscription;
+  username: string;
 
-  displayedColumns: string[] = ['RUPCode', 'ProjectName', 'ContractStartDate', 'OrganizationUnit', 'RequestType'];
+  displayedColumns: string[] = [
+    'RUPCode',
+    'ProjectName',
+    'ContractStartDate',
+    'OrganizationUnit',
+    'RequestType'
+  ];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.urlSubs = this.route.params.subscribe(param => {
-      console.log(param.project);
+      // console.log(param.project);
+    });
+
+    this.route.parent.paramMap.subscribe(params => {
+      this.username = params.get('username');
     });
   }
 
@@ -30,6 +41,10 @@ export class RoomProjectsListComponent implements OnInit, OnDestroy {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  rowClicked(selectedRow: RequestElement) {
+    console.log(selectedRow);
   }
 }
 

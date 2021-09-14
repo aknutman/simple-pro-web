@@ -16,3 +16,11 @@ table {
   font-size: 14px;
   width: 100%;
 }
+
+.mat-row {
+  background-color: white;
+}
+.mat-row:hover {
+  cursor: pointer;
+  background-color: #ede7f6;
+}

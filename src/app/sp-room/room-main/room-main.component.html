@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayoutAlign="space-between none" style="height: 100%;">
-  <div fxFlex="20" class="side-nav">
+  <div fxFlex="20" class="side-nav" *ngIf="!deviceXs">
     <mat-selection-list #sidemenu [multiple]="false"
       (selectionChange)="onSelectionChanges(sidemenu.selectedOptions.selected[0].value)">
       <div mat-subheader>Dashboard</div>

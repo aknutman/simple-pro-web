@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { MediaObserver } from '@angular/flex-layout';
 
 import { Subscription } from 'rxjs';
 
@@ -16,9 +17,11 @@ export interface menuNameType {
   templateUrl: './room-main.component.html',
   styleUrls: ['./room-main.component.css']
 })
-export class RoomMainComponent implements OnInit {
+export class RoomMainComponent implements OnInit, OnDestroy {
+  mediaSub: Subscription;
   subs: Subscription;
   username: string;
+  deviceXs: boolean = false;
 
   readonly project_home_string: string = 'Paket Pengadaan';
 
@@ -40,7 +43,8 @@ export class RoomMainComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private jwtToken: JwtTokenService
+    private jwtToken: JwtTokenService,
+    private mediaObserver: MediaObserver
   ) {}
 
   ngOnInit() {
@@ -72,12 +76,19 @@ export class RoomMainComponent implements OnInit {
         this.backUrl = valval;
       }
     });
+
+    // Media size
+    this.mediaSub = this.mediaObserver.asObservable().subscribe(result => {
+      this.deviceXs = result[0].mqAlias == 'xs' ? true : false;
+    });
   }
 
   ngOnDestroy() {
     this.jwtToken.setJwtToken('');
 
     this.subs.unsubscribe();
+
+    this.mediaSub.unsubscribe();
   }
 
   onSelectionChanges(options: string) {

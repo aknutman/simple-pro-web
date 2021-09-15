@@ -53,7 +53,6 @@ export class RoomProjectsListComponent implements OnInit, OnDestroy {
 
 export interface RequestElement {
   Id: string;
-  RequestNumber: string;
   ProjectName: string;
   RUPCode: string;
   CeilingValue: number;
@@ -66,7 +65,6 @@ export interface RequestElement {
 const ELEMENT_DATA: RequestElement[] = [
   {
     Id: "ID-001",
-    RequestNumber: 'RN-001',
     ProjectName: 'Test',
     RUPCode: 'RUP-001',
     CeilingValue: 200000000,
@@ -77,7 +75,6 @@ const ELEMENT_DATA: RequestElement[] = [
   },
   {
     Id: "ID-002",
-    RequestNumber: 'RN-002',
     ProjectName: 'Ahahahaha',
     RUPCode: 'RUP-002',
     CeilingValue: 250000000,
@@ -88,7 +85,6 @@ const ELEMENT_DATA: RequestElement[] = [
   },
   {
     Id: "ID-003",
-    RequestNumber: 'RN-003',
     ProjectName: 'Coba lagi',
     RUPCode: 'RUP-003',
     CeilingValue: 300000000,

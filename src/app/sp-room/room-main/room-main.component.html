@@ -45,7 +45,7 @@
   <div fxFlex class="main-panel">
     <mat-toolbar class="main-panel-toolbar">
       <mat-toolbar-row>
-        <button mat-icon-button routerLink="/u/{{username}}/projects/home" (click)="backAction()" class="back-button" *ngIf="backButton">
+        <button mat-icon-button routerLink="{{backUrl}}" (click)="backAction()" class="back-button" *ngIf="backButton">
           <mat-icon>arrow_back_ios</mat-icon>
         </button>
         <span>{{selectedTitle}}</span>

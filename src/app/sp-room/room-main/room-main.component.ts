@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
@@ -24,6 +24,8 @@ export class RoomMainComponent implements OnInit {
 
   selectedTitle: string = this.project_home_string;
   backButton: boolean = false;
+
+  backUrl: string;
 
   menuNames: menuNameType[] = [
     { value: 'dashboard', name: 'Dashboard', back: false },
@@ -50,6 +52,25 @@ export class RoomMainComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       this.username = params.get('username');
+    });
+
+    // Get previous url route
+    this.router.events.subscribe(param => {
+      if (param instanceof NavigationEnd) {
+        const val = param.url.replace('detail', '').split('/');
+
+        // Remove last element
+        val.pop();
+
+        let valval = '';
+        val.forEach(item => {
+          if (item.length > 0) {
+            valval = valval + '/' + item;
+          }
+        });
+
+        this.backUrl = valval;
+      }
     });
   }
 

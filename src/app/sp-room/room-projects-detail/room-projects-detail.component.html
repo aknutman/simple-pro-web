@@ -1,8 +1,66 @@
 <div fxLayout="row wrap" fxLayoutGap="10px grid">
   <div fxFlex="50%" fxFlex.xs="100%">
     <mat-form-field appearance="standard">
-      <mat-label>Input</mat-label>
+      <mat-label>Nama Paket Pengadaan</mat-label>
       <input matInput />
+    </mat-form-field>
+  </div>
+
+  <div fxFlex="50%" fxFlex.xs="100%">
+    <mat-form-field appearance="standard">
+      <mat-label>Kode RUP</mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+</div>
+
+<div fxLayout="row wrap" fxLayoutGap="10px grid">
+  <div fxFlex="50%" fxFlex.xs="100%">
+    <mat-form-field appearance="standard">
+      <mat-label>Jenis Pengadaan</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div fxFlex="50%" fxFlex.xs="100%">
+    <mat-form-field appearance="standard">
+      <mat-label>Nilai Pagu</mat-label>
+      <input
+        matInput
+        type="number"
+        class="example-right-align"
+        placeholder="0"
+      />
+      <span matPrefix>Rp.&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
+  </div>
+</div>
+
+<div fxLayout="row wrap" fxLayoutGap="10px grid">
+  <div fxFlex="50%" fxFlex.xs="100%">
+    <mat-form-field appearance="standard">
+      <mat-label>Nilai HPS</mat-label>
+      <input
+        matInput
+        type="number"
+        class="example-right-align"
+        placeholder="0"
+      />
+      <span matPrefix>Rp.&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
+  </div>
+
+  <div fxFlex="50%" fxFlex.xs="100%">
+    <mat-form-field appearance="standard">
+      <mat-label>Tanggal Mulai Kontrak</mat-label>
+      <input matInput [matDatepicker]="picker" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </div>
 </div>

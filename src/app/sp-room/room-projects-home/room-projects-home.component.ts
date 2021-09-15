@@ -14,12 +14,8 @@ export class RoomProjectsHomeComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.urlSubs = this.route.params.subscribe(param => {
-      console.log(param.project);
-    });
   }
 
   ngOnDestroy(){
-    this.urlSubs.unsubscribe;
   }
 }
